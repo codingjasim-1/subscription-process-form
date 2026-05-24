@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guided Subsription Process</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Start Your Journey With Us</h2>
+    <p class="benefits">
+      🚀 Get exclusive content, latest updates, member access, and more!
+    </p>
+    <div class="progress-bar">
+      <span id="bar1" class="active"></span>
+      <span id="bar2"></span>
+      <span id="bar3"></span>
+    </div>
+    <div class="loader" id="loader"></div>
+
+    <div class="step active" id="step1">
+      <div class="form-group">
+        <label for="name">Enter Your Name</label>
+        <input type="text" id="name" placeholder="e.g., Joseph Vijay" />
+      </div>
+      <div class="form-group">
+        <label for="plan">Select a Plan</label>
+        <select id="plan" onchange="showPlanInfo()">
+          <option value="basic">Basic - Free</option>
+          <option value="pro">Pro - $5.99/mo</option>
+          <option value="premium">Premium - $11.99/mo</option>
+        </select>
+        <p id="plan-info" class="plan-info"></p>
+      </div>
+      <div class="buttons">
+        <button onclick="nextStep(1)">Next</button>
+      </div>
+    </div>
+
+    <div class="step" id="step2">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="e.g., john@example.com" />
+      </div>
+      <div class="buttons">
+        <button onclick="prevStep(2)">Back</button>
+        <button onclick="nextStep(2)">Next</button>
+      </div>
+    </div>
+
+    <div class="step" id="step3">
+      <div class="thank-you">
+        <p>🎉 Thanks for Connecting With Us!</p>
+        <p>You’re officially part of the community — expect an email from us shortly.</p>
+      </div>
+      <div class="buttons">
+        <button onclick="prevStep(3)">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
